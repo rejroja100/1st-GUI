@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.jar.JarEntry;
 
 public class myFrame extends JFrame {
@@ -15,9 +17,9 @@ public class myFrame extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new FlowLayout());
-        setBounds(500, 200, 200, 500);
+        setBounds(500, 50, 200, 500);
         setLocationRelativeTo(null);
-        setSize(300, 400);
+        //setSize(300, 400);
         l.setText("Rejwoan");
         Font font = new Font("Monaco", Font.ITALIC, 40);
         l.setFont(font);
@@ -33,5 +35,14 @@ public class myFrame extends JFrame {
         add(l);
         add(l2);
         pack();
+
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("hello world, Rejwoan !!!");
+                setTitle("Rejwoan !!");
+            }
+        });
+
     }
 }
